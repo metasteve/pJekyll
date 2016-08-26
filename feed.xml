@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jekyll Polymer Theme</title>
+    <description>This is a material design theme for Polymer using Google&#39;s Polymer library. It&#39;s still an early draft, so be nice.
+</description>
+    <link>http://juliaebert.com/jekyll-polymer/</link>
+    <atom:link href="http://juliaebert.com/jekyll-polymer/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 26 Aug 2016 15:45:56 -0400</pubDate>
+    <lastBuildDate>Fri, 26 Aug 2016 15:45:56 -0400</lastBuildDate>
+    <generator>Jekyll v3.1.2</generator>
+    
+      <item>
+        <title>About the Jekyll Polymer Theme</title>
+        <description>&lt;p&gt;&lt;em&gt;Taken from the readme file of the project’s &lt;a href=&quot;https://github.com/jtebert/jekyll-polymer&quot;&gt;Github repository&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;A Jekyll theme built with Google’s Polymer library and following the material design specifications.&lt;/p&gt;
+
+&lt;p&gt;There are a few custom web components included designed to match Material design.&lt;/p&gt;
+
+&lt;p&gt;I created this theme because I couldn’t figure out how to set up a Jekyll project to play nicely with Polymer, and because I didn’t find any Jekyll blog themes available that used Polymer or followed Google’s material design specifications.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Full-text search with &lt;a href=&quot;https://github.com/christian-fei/Simple-Jekyll-Search&quot;&gt;simple-jekyll-search&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Paginated home page&lt;/li&gt;
+  &lt;li&gt;Support for featured post images (appears on cards in previews)&lt;/li&gt;
+  &lt;li&gt;Threaded comments with Disqus&lt;/li&gt;
+  &lt;li&gt;Google Analytics integration&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;installation-instructions&quot;&gt;Installation instructions&lt;/h2&gt;
+
+&lt;p&gt;(Instructions are based off of those for the &lt;a href=&quot;https://github.com/PolymerElements/polymer-starter-kit&quot;&gt;Polymer Starter Kit&lt;/a&gt;.)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Clone this repository or download it as a .zip file and unzip.&lt;/li&gt;
+  &lt;li&gt;Install jekyll (and any other Ruby gems) with &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle install&lt;/code&gt;. (Prerequisite: must have Ruby installed. You may also have to install bundler with &lt;code class=&quot;highlighter-rouge&quot;&gt;gem install bundler&lt;/code&gt;.)&lt;/li&gt;
+  &lt;li&gt;From the project root folder, run &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install -g gulp bower &amp;amp;&amp;amp; npm install &amp;amp;&amp;amp; bower install&lt;/code&gt;. (See the &lt;a href=&quot;https://github.com/PolymerElements/polymer-starter-kit#install-dependencies&quot;&gt;Polymer Starter Kit installation instructions&lt;/a&gt; for more details or troubleshooting.)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;structure&quot;&gt;Structure&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app/&lt;/code&gt;: All Jekyll content is here. (This is where all the editing happens)
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bower_components&lt;/code&gt;: Content installed via bower ends up here&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;elements/&lt;/code&gt;: Custom web components using Polymer&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;images/&lt;/code&gt;: User images&lt;/li&gt;
+      &lt;li&gt;‘media/’: Other user content (PDFs, videos, etc.) for final product&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;scripts/&lt;/code&gt;: Javascript files&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;styles/&lt;/code&gt;: Custom CSS&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dist/&lt;/code&gt;: Built output from Gulp. (Use to publish static content)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;node_modules&lt;/code&gt;: Content installed via npm goes here&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;deployment&quot;&gt;Deployment&lt;/h2&gt;
+
+&lt;h3 id=&quot;servewatch&quot;&gt;Serve/watch&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gulp serve&lt;/code&gt;: Starts a jekyll serve process on the default port (4000 or whatever is specified in &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gulp serve --port 6666&lt;/code&gt;: Start serving on port &lt;code class=&quot;highlighter-rouge&quot;&gt;6666&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gulp serve:dist&lt;/code&gt;: Build as below, and serve the result from the &lt;code class=&quot;highlighter-rouge&quot;&gt;dist/&lt;/code&gt; directory. (Useful for testing changes to the gulpfile.)&lt;/p&gt;
+
+&lt;h3 id=&quot;build-and-vulcanize&quot;&gt;Build and vulcanize&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gulp&lt;/code&gt;: Builds the files with jekyll, vulcanizes, minimizes, and puts the result in the &lt;code class=&quot;highlighter-rouge&quot;&gt;dist/&lt;/code&gt; directory. (This can be slow.)&lt;/p&gt;
+
+&lt;h2 id=&quot;deploy&quot;&gt;Deploy&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gulp deploy-gh-pages&lt;/code&gt;: Deploy the current build to the gh-pages branch of your repository.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gulp build-deploy-gh-pages&lt;/code&gt;: Rebuild and then deploy. (Equivalent to &lt;code class=&quot;highlighter-rouge&quot;&gt;gulp &amp;amp;&amp;amp; gulp deploy-gh-pages&lt;/code&gt;)&lt;/p&gt;
+
+&lt;h2 id=&quot;future-improvements&quot;&gt;Future Improvements:&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Improve gulp build
+    &lt;ul&gt;
+      &lt;li&gt;Minimize JS, CSS, HTML&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Search
+    &lt;ul&gt;
+      &lt;li&gt;Ripple effect in search results on click (needs set height)&lt;/li&gt;
+      &lt;li&gt;Escape toggles search show&lt;/li&gt;
+      &lt;li&gt;arrow keys/tab moves focus on search results&lt;/li&gt;
+      &lt;li&gt;better animation for search bar leaving/entering&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Navigation drawer
+    &lt;ul&gt;
+      &lt;li&gt;Change hover effect on drawer items (see Google Music)&lt;/li&gt;
+      &lt;li&gt;Make selected/active items in drawer colored&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Page transition animations&lt;/li&gt;
+  &lt;li&gt;Give option of setting card-colorbar color&lt;/li&gt;
+  &lt;li&gt;Add ripple effect to nav drawer menu items&lt;/li&gt;
+  &lt;li&gt;Pagination:
+    &lt;ul&gt;
+      &lt;li&gt;Maybe replace with actual buttons&lt;/li&gt;
+      &lt;li&gt;hover effects like buttons?&lt;/li&gt;
+      &lt;li&gt;Handle if it gets too wide for screen? (limit number of page links)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Tags
+    &lt;ul&gt;
+      &lt;li&gt;Show tags with posts&lt;/li&gt;
+      &lt;li&gt;Allow filtering by tag&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Add material box or lightbox for images&lt;/li&gt;
+  &lt;li&gt;Add ‘source’ option for YAML frontmatter&lt;/li&gt;
+  &lt;li&gt;increase spacing between list items&lt;/li&gt;
+  &lt;li&gt;Fix things like header-panel to utilize updates to polymer paper elements&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;known-issues&quot;&gt;Known issues&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;JS and HTML aren’t minimized&lt;/li&gt;
+  &lt;li&gt;Too much space on cards between end of excerpt and read more button&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Fri, 19 Jun 2015 00:00:00 -0400</pubDate>
+        <link>http://juliaebert.com/jekyll-polymer/2015/06/19/about-jekyll-polymer-theme/</link>
+        <guid isPermaLink="true">http://juliaebert.com/jekyll-polymer/2015/06/19/about-jekyll-polymer-theme/</guid>
+        
+        <category>jekyll</category>
+        
+        <category>design</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Post with blocks of text</title>
+        <description>&lt;p&gt;Schlitz YOLO synth sriracha lumbersexual magna, lo-fi leggings nostrud pug Carles XOXO hoodie eiusmod. Ea officia crucifix sunt lumbersexual nesciunt, jean shorts Etsy occupy tousled ennui irony. Adipisicing exercitation bespoke, Pinterest drinking vinegar officia food truck aliquip. Chillwave Intelligentsia four loko flannel cornhole bespoke. Ea chillwave ennui anim commodo. Wayfarers brunch trust fund crucifix, squid kitsch health goth Pitchfork cliche Etsy sustainable iPhone distillery 8-bit. Thundercats non Portland forage minim selfies, food truck irure mustache.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Enim cardigan Tumblr, Thundercats trust fund Godard Austin cliche occaecat literally post-ironic drinking vinegar salvia magna small batch. Brunch lomo chambray delectus narwhal whatever, sriracha Marfa paleo twee. Meditation dreamcatcher tattooed Truffaut ullamco. Try-hard deep v stumptown quis Vice mixtape, ad Etsy odio paleo quinoa. Ennui seitan put a bird on it banjo culpa. Narwhal before they sold out jean shorts ad ullamco, et ennui magna. Kickstarter paleo listicle nulla, occaecat incididunt nesciunt retro salvia.&lt;/p&gt;
+
+&lt;p&gt;Ugh Wes Anderson kogi master cleanse, trust fund leggings sed High Life drinking vinegar. Ad cornhole artisan dreamcatcher YOLO, labore Banksy eiusmod messenger bag enim tofu culpa. High Life qui street art cardigan. Trust fund Banksy keffiyeh pickled, Brooklyn single-origin coffee actually salvia. Sustainable id mlkshk whatever. PBR cillum drinking vinegar swag. Keytar magna cold-pressed brunch.&lt;/p&gt;
+
+&lt;p&gt;Farm-to-table PBR craft beer, cliche commodo food truck before they sold out nostrud adipisicing semiotics. Nesciunt kitsch Carles, typewriter banjo sapiente bitters four dollar toast migas. Umami tousled irony taxidermy, PBR +1 bespoke culpa. Kogi aliqua single-origin coffee, shabby chic nisi trust fund master cleanse mumblecore aute Banksy quinoa. Mlkshk small batch gastropub jean shorts. You probably haven’t heard of them vegan Tumblr, odio Blue Bottle iPhone stumptown freegan ut tempor selvage biodiesel post-ironic nesciunt. Swag culpa bespoke, mixtape Tumblr American Apparel ut Pitchfork.&lt;/p&gt;
+
+&lt;p&gt;Cronut asymmetrical synth, Marfa meditation twee tempor quis Thundercats scenester plaid readymade salvia dolor fugiat. Vice assumenda flannel reprehenderit before they sold out, flexitarian normcore locavore pickled chillwave. Aliqua in wayfarers, cardigan narwhal esse mustache tote bag 8-bit placeat YOLO. Typewriter master cleanse cold-pressed food truck. DIY YOLO gentrify, freegan mustache ethical nesciunt gluten-free small batch tofu. Placeat tempor artisan, delectus ennui duis incididunt irure pariatur skateboard. Narwhal wolf esse leggings, bitters Williamsburg put a bird on it enim swag four dollar toast Vice Schlitz cardigan irony dreamcatcher.&lt;/p&gt;
+
+&lt;p&gt;Occaecat magna Intelligentsia, laborum synth before they sold out Helvetica nulla kale chips eu next level DIY trust fund. Forage pour-over scenester ut meggings. Food truck eu labore 90’s, deserunt messenger bag next level paleo PBR&amp;amp;B pork belly. Jean shorts DIY before they sold out direct trade, vegan tote bag culpa mixtape nesciunt slow-carb listicle ennui put a bird on it Brooklyn. Ut cronut lumbersexual, letterpress stumptown delectus seitan reprehenderit Bushwick messenger bag incididunt street art polaroid lomo hella. Do voluptate pork belly, fanny pack direct trade tote bag nihil. Mumblecore aesthetic Tumblr VHS master cleanse Portland.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 17 Jun 2015 00:00:00 -0400</pubDate>
+        <link>http://juliaebert.com/jekyll-polymer/2015/06/17/hipsum/</link>
+        <guid isPermaLink="true">http://juliaebert.com/jekyll-polymer/2015/06/17/hipsum/</guid>
+        
+        <category>multi-word tag</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Image in front matter (featured image)</title>
+        <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Tom&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &#39;Hi, Tom. You really suck.&#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://github.com/jekyll/jekyll-help&quot;&gt;Jekyll’s dedicated Help repository&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 10 Jun 2015 10:03:06 -0400</pubDate>
+        <link>http://juliaebert.com/jekyll-polymer/jekyll/update/2015/06/10/featured-image/</link>
+        <guid isPermaLink="true">http://juliaebert.com/jekyll-polymer/jekyll/update/2015/06/10/featured-image/</guid>
+        
+        <category>images</category>
+        
+        <category>code</category>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Welcome to Jekyll!</title>
+        <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve --watch&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Tom&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &#39;Hi, Tom&#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://github.com/jekyll/jekyll-help&quot;&gt;Jekyll’s dedicated Help repository&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 08 Jun 2015 17:27:27 -0400</pubDate>
+        <link>http://juliaebert.com/jekyll-polymer/2015/06/08/welcome-to-jekyll/</link>
+        <guid isPermaLink="true">http://juliaebert.com/jekyll-polymer/2015/06/08/welcome-to-jekyll/</guid>
+        
+        <category>jekyll</category>
+        
+        <category>code</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Typography</title>
+        <description>&lt;p&gt;Here are the different features and styles available for posts written in Markdown. To see how to create them, check out the source markdown file.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h1 id=&quot;headings&quot;&gt;Headings&lt;/h1&gt;
+
+&lt;h1 id=&quot;heading-1&quot;&gt;Heading 1&lt;/h1&gt;
+
+&lt;h2 id=&quot;heading-2&quot;&gt;Heading 2&lt;/h2&gt;
+
+&lt;h3 id=&quot;heading-3&quot;&gt;Heading 3&lt;/h3&gt;
+
+&lt;h4 id=&quot;heading-4&quot;&gt;Heading 4&lt;/h4&gt;
+
+&lt;h5 id=&quot;heading-5&quot;&gt;Heading 5&lt;/h5&gt;
+
+&lt;h6 id=&quot;heading-6&quot;&gt;Heading 6&lt;/h6&gt;
+
+&lt;h1 id=&quot;tables&quot;&gt;Tables&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Markdown Extra&lt;/strong&gt; has a special syntax for tables:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Item&lt;/th&gt;
+      &lt;th&gt;Value&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Computer&lt;/td&gt;
+      &lt;td&gt;1600 USD&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Phone&lt;/td&gt;
+      &lt;td&gt;12 USD&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Pipe&lt;/td&gt;
+      &lt;td&gt;1 USD&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;You can specify column alignment with one or two colons:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Item&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Value&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Qty&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Computer&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;1600 USD&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Phone&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;12 USD&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;12&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Pipe&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;1 USD&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;234&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&quot;lists&quot;&gt;Lists&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2
+    &lt;ul&gt;
+      &lt;li&gt;Subitem 2.1&lt;/li&gt;
+      &lt;li&gt;Subitem 2.2&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;blockquotes&quot;&gt;Blockquotes&lt;/h1&gt;
+
+&lt;p&gt;You can write block quotes.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;This is a block quote.
+It’s split over multiple lines.&lt;/p&gt;
+
+  &lt;p&gt;It can also have multiple paragraphs.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;math-with-mathjax&quot;&gt;Math (with MathJax)&lt;/h1&gt;
+
+&lt;p&gt;You can render &lt;em&gt;LaTeX&lt;/em&gt; mathematical expressions using &lt;strong&gt;MathJax&lt;/strong&gt;, as on &lt;a href=&quot;http://math.stackexchange.com/&quot;&gt;math.stackexchange.com&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;There are inline equations like \( y = x + 2 \) indicated by &lt;code class=&quot;highlighter-rouge&quot;&gt;\\( ... \\)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can also display an equation (not inline displayed) using inline code, like \[ y = x + 4\] which you do with &lt;code class=&quot;highlighter-rouge&quot;&gt;\\[ ... \\]&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Or you can display a block of math by surrounding it with &lt;code class=&quot;highlighter-rouge&quot;&gt;$$ ... $$&lt;/code&gt;. Like this:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.&lt;/script&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; Make sure you include MathJax into your publications to render mathematical expression correctly. Your page/template should include something like:&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;script type=&quot;text/javascript&quot; src=&quot;https://stackedit.io/libs/MathJax/MathJax.js?config=TeX-AMS_HTML&quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;code&quot;&gt;Code&lt;/h1&gt;
+
+&lt;h2 id=&quot;inline-code&quot;&gt;Inline code&lt;/h2&gt;
+
+&lt;p&gt;Code embedded in a paragraph looks like &lt;code class=&quot;highlighter-rouge&quot;&gt;this is code&lt;/code&gt;. Code can also be in blocks with or without line numbers.&lt;/p&gt;
+
+&lt;h2 id=&quot;code-blocks&quot;&gt;Code blocks&lt;/h2&gt;
+
+&lt;p&gt;Code blocks have syntax highlighting courtesy of highlight.js. You can specify the code language and whether you want the code block to include line numbers. (You can include line numbers using just &lt;code class=&quot;highlighter-rouge&quot;&gt;linenos&lt;/code&gt; instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;linenos=table&lt;/code&gt;, but this puts the line numbers in the same lines as the code so that it becomes impossible to copy and paste.)&lt;/p&gt;
+
+&lt;p&gt;Without line numbers:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Tom&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &#39;Hi, Tom&#39; to STDOUT. This is a long line to test scrolling if it goes past the box.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;With line numbers:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Tom&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &#39;Hi, Tom&#39; to STDOUT.&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h1 id=&quot;definition-lists&quot;&gt;Definition Lists&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Markdown Extra&lt;/strong&gt; has a special syntax for definition lists too:&lt;/p&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;Term 1&lt;/dt&gt;
+  &lt;dt&gt;Term 2&lt;/dt&gt;
+  &lt;dd&gt;Definition A&lt;/dd&gt;
+  &lt;dd&gt;Definition B&lt;/dd&gt;
+  &lt;dt&gt;Term 3&lt;/dt&gt;
+  &lt;dd&gt;
+    &lt;p&gt;Definition C&lt;/p&gt;
+  &lt;/dd&gt;
+  &lt;dd&gt;
+    &lt;p&gt;Definition D&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;part of definition D&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;h1 id=&quot;dividers&quot;&gt;Dividers&lt;/h1&gt;
+
+&lt;p&gt;Divide up sections and stuff with dividers.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;They look like that.&lt;/p&gt;
+
+&lt;h1 id=&quot;font-weights-and-styles&quot;&gt;Font weights and styles&lt;/h1&gt;
+
+&lt;p&gt;This text is &lt;strong&gt;bold text&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;This is &lt;em&gt;italicized&lt;/em&gt; text.&lt;/p&gt;
+
+&lt;h1 id=&quot;links-and-footnotes&quot;&gt;Links and Footnotes&lt;/h1&gt;
+
+&lt;p&gt;You can create footnotes like this&lt;sup id=&quot;fnref:footnote&quot;&gt;&lt;a href=&quot;#fn:footnote&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can embed links with a direct link, like &lt;a href=&quot;http://www.google.com&quot;&gt;this link to Google&lt;/a&gt;. Links can also be in a separated form like &lt;a href=&quot;http://jekyllrb.com&quot;&gt;this link to the Jekyll documention&lt;/a&gt;. (That’s useful if you want to link to the same website multiple times &lt;a href=&quot;http://jekyllrb.com&quot;&gt;like this&lt;/a&gt;.)&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:footnote&quot;&gt;
+      &lt;p&gt;Here is the &lt;em&gt;text&lt;/em&gt; of the &lt;strong&gt;footnote&lt;/strong&gt;. &lt;a href=&quot;#fnref:footnote&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Mon, 08 Jun 2015 00:00:00 -0400</pubDate>
+        <link>http://juliaebert.com/jekyll-polymer/2015/06/08/typography/</link>
+        <guid isPermaLink="true">http://juliaebert.com/jekyll-polymer/2015/06/08/typography/</guid>
+        
+        <category>markdown</category>
+        
+        <category>design</category>
+        
+        <category>code</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Image in excerpt</title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://www.google.com/logos/doodles/2015/womens-world-cup-2015-us-first-match-5145027185475584-hp.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve --watch&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Tom&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &#39;Hi, Tom&#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://github.com/jekyll/jekyll-help&quot;&gt;Jekyll’s dedicated Help repository&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 08 Jun 2014 00:00:00 -0400</pubDate>
+        <link>http://juliaebert.com/jekyll-polymer/2014/06/08/image-in-excerpt/</link>
+        <guid isPermaLink="true">http://juliaebert.com/jekyll-polymer/2014/06/08/image-in-excerpt/</guid>
+        
+        <category>images</category>
+        
+        <category>code</category>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
