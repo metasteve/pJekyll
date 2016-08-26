@@ -14,7 +14,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <meta name="theme-color" content="#fff">
-  
+
   <title>Shrine</title>
 
   <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
@@ -38,8 +38,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <template is="dom-bind">
 
-    <iron-ajax url="data/items.json" auto last-response="{{items}}"></iron-ajax>
-    <iron-ajax url="data/featured.json" auto last-response="{{featuredItems}}"></iron-ajax>
+    <iron-ajax url="src/items.json" auto last-response="{{items}}"></iron-ajax>
+    <iron-ajax url="src/featured.json" auto last-response="{{featuredItems}}"></iron-ajax>
     <shrine-app items="[[items]]" featured-items="[[featuredItems]]"></shrine-app>
 
   </template>
