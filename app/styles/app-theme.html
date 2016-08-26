@@ -1,0 +1,677 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-styles/typography.html">
+
+<style is="custom-style">
+
+  /*
+   Polymer includes a shim for CSS Custom Properties that we can use for application theming.
+   Below, you'll find the default palette for the Polymer Starter Kit layout. Feel free to play
+   with changing the colors used or generate your own palette of colours at MaterialPalette.com.
+
+   See https://www.polymer-project.org/1.0/docs/devguide/styling.html#xscope-styling-details
+   for further information on custom CSS properties.
+   */
+
+  /* Application theme */
+
+  :root {
+    --primary-text-color: #212121;
+    --primary-background-color: #f5f5f5;
+    --secondary-text-color: #727272;
+    --disabled-text-color: #bdbdbd;
+    --divider-color: #E0E0E0;
+    --primary-color: #607D8B;
+    --light-primary-color: #CFD8DC;
+    --dark-primary-color: #D32F2F;
+
+    --accent-color: #FF5722;
+    --light-accent-color: #ff80ab;
+    --dark-accent-color: #f50057;
+
+    /* CUSTOM */
+    --code-text-color: #607D8B;
+
+
+    /* Components */
+
+    /* paper-drawer-panel */
+    --drawer-menu-color: #ffffff;
+    --drawer-border-color: 1px solid #ccc;
+    --drawer-toolbar-border-color: 1px solid rgba(0, 0, 0, 0.22);
+
+    /* paper-menu */
+    --paper-menu-background-color: #fff;
+    --menu-link-color: #111111;
+  }
+
+  /* General styles */
+
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    background-color: var(--primary-background-color);
+    color: var(--primary-text-color);
+    @apply(--paper-font-body1);
+  }
+
+  p, ul, ol {
+    line-height: 24px;
+    margin: 0 0 20px 0;
+  }
+  li ol, li ul {
+    margin: 0;
+  }
+
+  code, pre {
+    color: var(--code-text-color);
+  }
+
+  /* This stuff is because it won't apply in-element styling to content dynamically added to the element */
+  my-search-bar p {
+    text-align: center;
+    @apply(--paper-font-subhead);
+    color: var(--secondary-text-color);
+    font-style: italic;
+    margin: 20px 0;
+  }
+  paper-item {
+    position: relative;
+    background-color: #fff;
+  }
+  a paper-item {
+    color: var(--primary-text-color);
+  }
+
+  blockquote {
+    padding: 0 0 0 15px;
+    margin: 0 0 20px;
+    border-left: 5px solid var(--light-primary-color);
+  }
+
+  hr {
+    display: block;
+    background-color: var(--divider-color);
+    height: 1px;
+    border: 0;
+    margin: 0;
+  }
+
+  .content hr {
+    margin: 16px 0;
+  }
+
+  a {
+    color: var(--accent-color);
+    text-decoration: none;
+  }
+
+  x-card a:hover {
+    text-decoration: underline;
+  }
+
+
+
+/* Footer */
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -49px;
+}
+
+#copyright-info, .push {
+    height: 49px;
+}
+  #copyright-info {
+    @apply(--paper-font-body1);
+    color: var(--secondary-text-color);
+    box-sizing: border-box;
+    padding: 12px 16px;
+    border-top: 1px solid var(--divider-color);
+    line-height: 24px;
+  }
+
+  #post {
+    padding: 24px 64px;
+    max-width: 700px;
+    transition: padding 0.2s linear;
+  }
+
+  #post img {
+    max-width: 100%;
+  }
+
+  @media only screen and (max-width: 850px) {
+    #post {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+
+  /** Content of posts **/
+
+  paper-button.accent {
+     color: white;
+     background-color: var(--accent-color);
+  }
+
+  #post img {
+    max-width: 100%;
+  }
+
+  #post-content {
+    @apply(--paper-font-body1);
+    margin-bottom: 32px;
+  }
+
+  dt {
+    font-weight: 700;
+  }
+
+  #date {
+    font-weight: 400 !important;
+  }
+
+  #post h1 {
+    @apply(--paper-font-display1);
+  }
+
+  #post h2 {
+    @apply(--paper-font-headline);
+  }
+
+  #post h3 {
+    @apply(--paper-font-title);
+  }
+
+  #post h4 {
+    @apply(--paper-font-subhead);
+    font-weight: 500;
+  }
+
+  #post h5 {
+    @apply(--paper-font-body2);
+  }
+
+  #post h6 {
+    @apply(--paper-font-caption);
+  }
+
+  #post-content h1, #post-content h2, #post-content h3 {
+    color: var(--accent-color);
+  }
+
+  #post-content a:hover {
+    text-decoration: underline;
+  }
+
+  table {
+    border-collapse: collapse;
+    margin-bottom: 16px;
+  }
+
+  table td {
+    border-top: 1px solid var(--divider-color, #b6b6b6);
+  }
+
+  table th {
+    text-align: left;
+  }
+
+  table th, table td {
+    padding: 8px;
+  }
+
+  .highlight table {
+    margin: 0 !important;
+  }
+  .highlight table td {
+    border: none !important;
+  }
+
+  .paper-font-subhead {
+    color: var(--secondary-text-color, #727272);
+  }
+
+  .section {
+    margin: 32px 0;
+  }
+  .share {
+    margin: 16px 0;
+  }
+  .share h3 {
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle;
+  }
+  .share a paper-icon-button {
+    color: var(--secondary-text-color, #727272);
+    margin: 4px;
+  }
+
+  paper-material {
+    border-radius: 2px;
+    height: 100%;
+    padding: 16px 0 16px 0;
+    width: calc(98.66% - 16px);
+    margin: 16px auto;
+    background: white;
+  }
+
+  paper-menu iron-icon {
+    margin-right: 33px;
+    opacity: 0.54;
+  }
+
+  .paper-menu > .iron-selected {
+    color: var(--primary-color);
+  }
+
+  paper-menu a {
+    text-decoration: none;
+    color: var(--menu-link-color);
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    font-family: 'Roboto', 'Noto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    min-height: 48px;
+    padding: 0 16px;
+  }
+
+  #mainToolbar .middle {
+    margin-left: 48px;
+  }
+
+  #mainToolbar.has-shadow .middle {
+    font-size: 20px;
+    padding-bottom: 0;
+    margin-left: 48px;
+  }
+
+  /* Height of the scroll area */
+  .content {
+    height: 900px;
+  }
+
+  /* Breakpoints */
+
+  /* Small */
+  @media (max-width: 600px) {
+
+    paper-material {
+      --menu-container-display: none;
+      width: calc(97.33% - 32px);
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    .paper-font-display1 {
+      font-size: 12px;
+    }
+
+    #drawer .paper-toolbar {
+      margin-left: 16px;
+    }
+
+    #overlay {
+      min-width: 360px;
+    }
+
+    .bg {
+      background: white;
+    }
+
+    #mainToolbar.tall .app-name {
+      font-size: 24px;
+      font-weight: 400;
+    }
+
+  }
+
+  /* Tablet+ */
+  @media (min-width: 601px) {
+
+    paper-material {
+      width: calc(98% - 46px);
+      margin-bottom: 32px;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    #drawer.paper-drawer-panel > [drawer] {
+      border-right: 1px solid rgba(0, 0, 0, 0.14);
+    }
+
+    iron-pages {
+      padding: 48px 62px;
+    }
+
+  }
+
+  /* Material Design Adaptive Breakpoints */
+  /*
+    Below you'll find CSS media queries based on the breakpoint guidance
+    published by the Material Design team. You can choose to use, customise
+    or remove these breakpoints based on your needs.
+
+    http://www.google.com/design/spec/layout/adaptive-ui.html#adaptive-ui-breakpoints
+   */
+
+  /* mobile-small */
+  @media all and (min-width: 0) and (max-width: 360px) and (orientation: portrait) { }
+  /* mobile-large */
+  @media all and (min-width: 361px) and (orientation: portrait) { }
+  /* mobile-small-landscape */
+  @media all and (min-width: 0) and (max-width: 480px) and (orientation: landscape) { }
+  /* mobile-large-landscape */
+  @media all and (min-width: 481px) and (orientation: landscape) { }
+  /* tablet-small-landscape */
+  @media all and (min-width: 600px) and (max-width: 960px) and (orientation: landscape) { }
+  /* tablet-large-landscape */
+  @media all and (min-width: 961px) and (orientation: landscape) { }
+  /* tablet-small */
+  @media all and (min-width: 600px) and (orientation: portrait) { }
+  /* tablet-large */
+  @media all and (min-width: 601px) and (max-width: 840px) and (orientation : portrait) { }
+  /* desktop-x-small-landscape */
+  @media all and (min-width: 0) and (max-width: 480px) and (orientation: landscape) { }
+  /* desktop-x-small */
+  @media all and (min-width: 0) and (max-width: 480px) and (max-aspect-ratio: 4/3) { }
+  /* desktop-small-landscape */
+  @media all and (min-width: 481px) and (max-width: 840px) and (orientation: landscape) { }
+  /* desktop-small */
+  @media all and (min-width: 481px) and (max-width: 840px) and (max-aspect-ratio: 4/3) { }
+  /* desktop-medium-landscape */
+  @media all and (min-width: 841px) and (max-width: 1280px) and (orientation: landscape) { }
+  /* desktop-medium */
+  @media all and (min-width: 841px) and (max-width: 1280px) and (max-aspect-ratio: 4/3) { }
+  /* desktop-large */
+  @media all and (min-width: 1281px) and (max-width: 1600px) { }
+  /* desktop-xlarge */
+  @media all and (min-width: 1601px) and (max-width: 1920px) { }
+
+
+  .card-wrapper {
+    width: 700px;
+    max-width: calc(100% - 32px);
+    padding: 0;
+    position: relative;
+    margin: 16px auto;
+  }
+
+  /** Customize cards to better match material specifications easily **/
+  paper-card.custom {
+    width: 100%;
+    background: #ffffff;
+    margin-bottom: 16px;
+    /* Make all images in header 16:9 */
+    --paper-card-header-image: {
+       height: 0;
+       padding-bottom: 56.25%;
+     }
+  }
+  paper-card.custom .title {
+    @apply(--paper-font-headline);
+    margin-top: 8px;
+    margin-bottom: 16px;
+  }
+  paper-card.custom .subtitle {
+    @apply(--paper-font-body1);
+    color: var(--secondary-text-color, #727272);
+    margin: -8px 0 16px 0;
+  }
+  paper-card .card-content *:last-child {
+    margin-bottom: 8px;
+  }
+
+  /** Archive page **/
+  #archive h2 {
+    color: var(--primary-text-color);
+  }
+  #archive li {
+    list-style: none;
+  }
+
+  /* Header bar and top menu */
+
+  paper-scroll-header-panel {
+    height: 100%;
+  }
+
+  #mainToolbar.tall .app-name {
+    font-size: 40px;
+    font-weight: 300;
+    /* Required for main area's paper-scroll-header-panel custom condensing transformation */
+    -webkit-transform-origin: left center;
+    transform-origin: left center;
+  }
+
+  #mainToolbar .middle-container,
+  #mainToolbar .bottom-container {
+  @apply(--layout-horizontal);
+  @apply(--layout-center);
+  }
+
+  #mainToolbar .middle-container  {
+    height: 100%;
+    margin-left: 48px;
+  }
+
+  #mainToolbar:not(.tall) .middle-container {
+    font-size: 18px;
+    padding-bottom: 0;
+  }
+
+  #mainToolbar .bottom-container {
+  @apply(--paper-font-subhead);
+
+    margin-left: 48px;
+    /* Required for main area's paper-scroll-header-panel custom condensing transformation */
+    -webkit-transform-origin: left center;
+    transform-origin: left center;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* General styles */
+
+  body {
+  @apply(--layout-fullbleed);
+  @apply(--layout-vertical);
+  }
+
+  .space {
+  @apply(--layout-flex);
+  }
+
+  #drawerToolbar {
+    color: var(--secondary-text-color);
+    background-color: var(--drawer-menu-color);
+    border-bottom: var(--drawer-toolbar-border-color);
+  }
+
+  #drawerToolbar .menu-name {
+  @apply(--paper-font-title);
+  }
+
+  paper-scroll-header-panel {
+    height: 100%;
+  }
+
+  paper-menu {
+  --paper-menu-selected-item: {
+     color: var(--primary-color);
+   }
+
+  --paper-menu-focused-item-after: {
+     background: var(--primary-color);
+   }
+  }
+
+  paper-menu iron-icon {
+    margin-right: 33px;
+    opacity: 0.54;
+  }
+
+  paper-menu a {
+  @apply(--layout-horizontal);
+  @apply(--layout-center);
+
+    text-decoration: none;
+    color: var(--menu-link-color);
+    font-family: 'Roboto', 'Noto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    min-height: 48px;
+    padding: 0 16px;
+  }
+
+  #mainToolbar.tall .app-name {
+    font-size: 40px;
+    font-weight: 300;
+    /* Required for main area's paper-scroll-header-panel custom condensing transformation */
+    -webkit-transform-origin: left center;
+    transform-origin: left center;
+  }
+
+  #mainToolbar .middle-container,
+  #mainToolbar .bottom-container {
+  @apply(--layout-horizontal);
+  @apply(--layout-center);
+  }
+
+  #mainToolbar .middle-container  {
+    height: 100%;
+    margin-left: 48px;
+  }
+
+  #mainToolbar:not(.tall) .middle-container {
+    font-size: 18px;
+    padding-bottom: 0;
+  }
+
+  #mainToolbar .bottom-container {
+  @apply(--paper-font-subhead);
+
+    margin-left: 48px;
+    /* Required for main area's paper-scroll-header-panel custom condensing transformation */
+    -webkit-transform-origin: left center;
+    transform-origin: left center;
+  }
+
+  /* Height of the scroll area */
+  .content {
+    height: 900px;
+  }
+
+  section[data-route="home"] paper-material {
+  @apply(--paper-font-body2);
+  }
+
+  section[data-route="home"] paper-material .subhead {
+  @apply(--paper-font-subhead);
+  }
+
+  paper-material {
+    border-radius: 2px;
+    height: 100%;
+    padding: 16px 0 16px 0;
+    width: calc(98.66% - 16px);
+    margin: 16px auto;
+    background: white;
+  }
+
+  #toast .toast-hide-button {
+    color: #eeff41;
+    margin: 10px;
+  }
+
+  /* Breakpoints */
+
+  /* Small */
+  @media (max-width: 600px) {
+
+    #drawer .paper-toolbar {
+      margin-left: 16px;
+    }
+
+    #mainToolbar.tall .app-name {
+      font-size: 24px;
+      font-weight: 400;
+    }
+
+    paper-material {
+      --menu-container-display: none;
+      width: calc(97.33% - 32px);
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+  }
+
+  /* Tablet+ */
+  @media (min-width: 601px) {
+
+    #drawer.paper-drawer-panel > [drawer] {
+      border-right: 1px solid rgba(0, 0, 0, 0.14);
+    }
+
+    iron-pages {
+      padding: 48px 62px;
+    }
+
+    paper-material {
+      width: calc(98% - 46px);
+      margin-bottom: 32px;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+  }
+
+
+
+
+
+
+</style>
