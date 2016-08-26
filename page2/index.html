@@ -11,7 +11,7 @@
     <meta name="description" content="This is a material design theme for Polymer using Google's Polymer library. It's still an early draft, so be nice.
 ">
 
-    <link rel="canonical" href="http://metasteve.github.com/pJekyll/pJekyll/index2/">
+    <link rel="canonical" href="http://metasteve.github.com/pJekyll/pJekyll/page2/">
     <link rel="alternate" type="application/rss+xml" title="Jekyll Polymer Theme" href='http://metasteve.github.com/pJekyll/pJekyll/feed.xml' />
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -127,9 +127,53 @@
       <div class="content"><div class="card-wrapper">
 <!-- This loops through the paginated posts -->
 
+
+  <paper-card class="custom"
+          >
+    <div class="card-content">
+      <div class="title">Image in excerpt</div>
+      <div class="subtitle">2014 June 8</div>
+      <p><img src="https://www.google.com/logos/doodles/2015/womens-world-cup-2015-us-first-match-5145027185475584-hp.jpg" /></p>
+
+<p>You’ll find this post in your <code class="highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="highlighter-rouge">jekyll serve --watch</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+
+
+    </div>
+    <div class="card-actions">
+      <a href="/pJekyll/2014/06/08/image-in-excerpt/"><paper-button>Read More</paper-button></a>
+    </div>
+  </paper-card>
+
+
 </div>
 
 <!-- Page navigation links -->
+
+<my-pagination>
+  <!-- Left Arrow -->
+  
+  <my-page-link href="/pJekyll/">
+    <iron-icon icon="chevron-left"></iron-icon>
+  </my-page-link>
+  
+
+  <!-- Page Numbers -->
+  
+    
+    <my-page-link href="/pJekyll/">1</my-page-link>
+    
+  
+    
+    <my-page-link active>2</my-page-link>
+    
+  
+
+  <!-- Right Arrow -->
+  
+  <my-page-link disabled><iron-icon icon="chevron-right"></iron-icon></my-page-link>
+  
+</my-pagination>
+
 </div>
 
     </paper-scroll-header-panel>
